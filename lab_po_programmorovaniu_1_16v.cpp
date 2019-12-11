@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 
 using namespace std;
 int main()
@@ -19,30 +19,14 @@ int main()
 	int ac = a;
 	int bc = b;
 	int cc = c;
-	for (x = Xn; x <= Xk; x += dX) {
-		if ((x == 0) && (b != 0))
-			y = a * (x + c) * (x + c);
+	
+	if ((((ac ^ bc) & (~(ac | cc)) != 0) && (ac != a)&&(bc != b)&&(cc != c)) || ((((ac ^ bc) & (~(ac | cc))) == 0) && (ac == a)&&(bc == b)&&(cc == c)))
+		d = 1;
+
 		else {
-			if ((x == 0) && (b == 0)) {
-				y = (x - a) / -c;
-			}
-
-			else {
-				y = a + (x / c);
-			}
-
+			cout << "Введённые значения не удовлетворяют условию задачи" << endl;
+			d = 0;
 		}
-		int yc = y;
-		if (d == 1) {
-			if ((((ac ^ bc) & (~(ac | cc)) != 0) && (yc != y)) || ((((ac ^ bc) & (~(ac | cc))) == 0) && (y == yc)))
-				d = 1;
-
-			else {
-				cout << "Введённые значения не удовлетворяют условию задачи" << endl;
-				d = 0;
-			}
-		}
-	}
 
 
 	for (x = Xn; x <= Xk; x += dX) {
